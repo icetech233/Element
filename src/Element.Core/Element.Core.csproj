@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.1;net7.0-windows</TargetFrameworks>
+    
+    <UseWPF>true</UseWPF>
+    
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+
+    <!--<Nullable>enable</Nullable>-->
+  </PropertyGroup>
+
+</Project>

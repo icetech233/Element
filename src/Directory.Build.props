@@ -1,0 +1,19 @@
+<Project>
+    <PropertyGroup>
+        <Copyright>2023 IceTech Studio, Inc.</Copyright>
+
+        <PackageIcon>element-plus-logo.png</PackageIcon>
+        <LangVersion>10.0</LangVersion>
+        
+
+
+
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <None Include="../element-plus-logo.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
+</Project>

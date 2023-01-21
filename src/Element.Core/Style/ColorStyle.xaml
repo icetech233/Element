@@ -1,0 +1,107 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--   Element.Core  https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/common/var.scss -->
+    
+    <Color x:Key="el-color-primary">#409eff</Color>
+    <Color x:Key="el-color-primary-light-3">#79bbff</Color>
+    <Color x:Key="el-color-primary-light-5">#a0cfff</Color>
+    <Color x:Key="el-color-primary-light-7">#c6e2ff</Color>
+    <Color x:Key="el-color-primary-dark-2">#337ecc</Color>
+
+    <Color x:Key="el-color-success">#67c23a</Color>
+    <Color x:Key="el-color-success-light-3">#95d475</Color>
+    <Color x:Key="el-color-success-light-5">#b3e19d</Color>
+    <Color x:Key="el-color-success-light-7">#d1edc4</Color>
+    <Color x:Key="el-color-success-dark-2">#529b2e</Color>
+
+    <!--   
+    
+color-scheme: light;
+    el-color-white: #ffffff;
+    el-color-black: #000000;
+    el-color-primary: #409eff;
+    el-color-primary-light-3: #79bbff;
+    el-color-primary-light-5: #a0cfff;
+    el-color-primary-light-7: #c6e2ff;
+    el-color-primary-light-8: #d9ecff;
+    el-color-primary-light-9: #ecf5ff;
+    el-color-primary-dark-2: #337ecc;
+    el-color-success: #67c23a;
+    el-color-success-light-3: #95d475;
+    el-color-success-light-5: #b3e19d;
+    el-color-success-light-7: #d1edc4;
+    el-color-success-light-8: #e1f3d8;
+    el-color-success-light-9: #f0f9eb;
+    el-color-success-dark-2: #529b2e;
+    el-color-warning: #e6a23c;
+    el-color-warning-light-3: #eebe77;
+    el-color-warning-light-5: #f3d19e;
+    el-color-warning-light-7: #f8e3c5;
+    el-color-warning-light-8: #faecd8;
+    el-color-warning-light-9: #fdf6ec;
+    el-color-warning-dark-2: #b88230;
+    el-color-danger: #f56c6c;
+    el-color-danger-light-3: #f89898;
+    el-color-danger-light-5: #fab6b6;
+    el-color-danger-light-7: #fcd3d3;
+    el-color-danger-light-8: #fde2e2;
+    el-color-danger-light-9: #fef0f0;
+    el-color-danger-dark-2: #c45656;
+    el-color-error: #f56c6c;
+    el-color-error-light-3: #f89898;
+    el-color-error-light-5: #fab6b6;
+    el-color-error-light-7: #fcd3d3;
+    el-color-error-light-8: #fde2e2;
+    el-color-error-light-9: #fef0f0;
+    el-color-error-dark-2: #c45656;
+    el-color-info: #909399;
+    el-color-info-light-3: #b1b3b8;
+    el-color-info-light-5: #c8c9cc;
+    el-color-info-light-7: #dedfe0;
+    el-color-info-light-8: #e9e9eb;
+    el-color-info-light-9: #f4f4f5;
+    el-color-info-dark-2: #73767a;
+    el-bg-color: #ffffff;
+    el-bg-color-page: #f2f3f5;
+    el-bg-color-overlay: #ffffff;
+    el-text-color-primary: #303133;
+    el-text-color-regular: #606266;
+    -->
+
+
+
+    <!--  主色  -->
+    <Color x:Key="GreenEffect">#009688</Color>
+    <Color x:Key="LightGreenEffect">#33ABA0</Color>
+    <SolidColorBrush x:Key="Green" Color="{StaticResource GreenEffect}" />
+    <SolidColorBrush x:Key="LightGreen" Color="{StaticResource LightGreenEffect}" />
+    <!--  百搭  -->
+    <Color x:Key="BlueEffect">#1E9FFF</Color>
+    <Color x:Key="LightBlueEffect">#4BB2FF</Color>
+    <Color x:Key="CyanBlueEffect">#5FB878</Color>
+    <SolidColorBrush x:Key="Blue" Color="{StaticResource BlueEffect}" />
+    <SolidColorBrush x:Key="LightBlue" Color="{StaticResource LightBlueEffect}" />
+    <SolidColorBrush x:Key="CyanBlue" Color="{StaticResource CyanBlueEffect}" />
+    <!--  暖色  -->
+    <Color x:Key="OrangeEffect">#FFB800</Color>
+    <Color x:Key="LightOrangeEffect">#FFC633</Color>
+    <SolidColorBrush x:Key="Orange" Color="{StaticResource OrangeEffect}" />
+    <SolidColorBrush x:Key="LightOrange" Color="{StaticResource LightOrangeEffect}" />
+    <!--  警告  -->
+    <Color x:Key="RedEffect">#FF5722</Color>
+    <Color x:Key="LightRedEffect">#FF794E</Color>
+    <SolidColorBrush x:Key="Red" Color="{StaticResource RedEffect}" />
+    <SolidColorBrush x:Key="LightRed" Color="{StaticResource LightRedEffect}" />
+    <!--  深色  -->
+    <Color x:Key="BlackEffect">#61646D</Color>
+    <Color x:Key="LightBlackEffect">#61646D</Color>
+    <SolidColorBrush x:Key="Black" Color="{StaticResource BlackEffect}" />
+    <SolidColorBrush x:Key="LightBlack" Color="{StaticResource LightBlackEffect}" />
+    <!--  灰色  -->
+    <Color x:Key="GrayEffect">#d2d2d2</Color>
+    <SolidColorBrush x:Key="Gray" Color="{StaticResource GrayEffect}" />
+    <!--  浅灰色  -->
+    <Color x:Key="LightGrayEffect">#FAFAFA</Color>
+    <SolidColorBrush x:Key="LighGray" Color="{StaticResource LightGrayEffect}" />
+</ResourceDictionary>
