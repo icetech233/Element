@@ -1,5 +1,223 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:o="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+    
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:el="clr-namespace:Element.Core.Controls"
+    >
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Element.Core;component/Style/ColorStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    
+    <!--其他-->
+    <Style x:Key="RectangleFocusVisual" TargetType="Rectangle">
+        <Setter Property="Margin" Value="-2" />
+        <Setter Property="Opacity" Value=".6" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Stroke" Value="Gray" />
+        <Setter Property="StrokeThickness" Value="2" />
+        <Setter Property="StrokeDashArray" Value="1 1" />
+    </Style>
+    <Style x:Key="FocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Style="{StaticResource RectangleFocusVisual}" RadiusX="4" RadiusY="4" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Color x:Key="PrimaryTextColor">#212121</Color>
+    <SolidColorBrush o:Freeze="True" x:Key="PrimaryTextBrush" Color="{DynamicResource PrimaryTextColor}" />
+    <system:Double x:Key="SubHeadFontSize">16</system:Double>
+    <system:Double x:Key="TextFontSize">12</system:Double>
+    
+    <!--Button-->
+
+    <Style x:Key="BaseStyle" TargetType="Control">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}" />
+        <Setter Property="FontSize" Value="{StaticResource TextFontSize}" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    </Style>
+    
+    <Style x:Key="ButtonBaseBaseStyle" BasedOn="{StaticResource BaseStyle}" TargetType="ButtonBase">
+        
+        <Setter Property="BorderBrush" Value="White" />
+        <Setter Property="BorderThickness" Value="0" />
+        
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+
+    </Style>
+
+    
+    
+    
+    
+    <!--样式模板-->
+    <system:Double x:Key="el-font-size-base">16</system:Double>
+
+    <system:Double x:Key="el-border-radius-base">4</system:Double>
+    <system:Double x:Key="el-border-radius-small">2</system:Double>
+    <system:Double x:Key="el-border-radius-round">20</system:Double>
+
+
+
+    <Style x:Key="ButtonBaseStyle" BasedOn="{StaticResource ButtonBaseBaseStyle}" TargetType="Button">
+        <!--ele  
+        white-space: nowrap;
+        
+        padding: 8px 15px; height: 32px; color: var(el-button-text-color);cursor: pointer;
+        TextWrapping="NoWrap"
+        -->
+
+        <Setter Property="Padding" Value="15 8" />
+        <Setter Property="FontSize" Value="{StaticResource el-font-size-base}" />
+        <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="Cursor" Value="Hand" />
+        <!--other-->
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="el:BorderElement.CornerRadius" Value="4" />
+        <Setter Property="el:IconElement.Length" Value="4" />
+        
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="{Binding Path=(el:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" >
+
+                        <StackPanel Orientation="Horizontal" Margin="{TemplateBinding Padding}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+
+                            <!-- Icon -->
+                            <Path x:Name="Icon"
+                                  Width="{TemplateBinding el:IconElement.Length}" Height="{TemplateBinding el:IconElement.Length}" />
+                            <ContentPresenter x:Name="Main" VerticalAlignment="Center" SnapsToDevicePixels="True"
+                                              Margin="6 0 0 0" />
+
+                        </StackPanel>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="el:IconElement.Geometry" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="Icon" />
+                            <Setter Property="Margin" Value="0" TargetName="Main" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--分割线-->
+
+    <!--Primary-->
+
+    <SolidColorBrush o:Freeze="True" x:Key="PrimaryBrush" Color="{StaticResource el-color-primary}" />
+    <SolidColorBrush o:Freeze="True" x:Key="PrimaryHoverBrush" Color="{StaticResource el-color-primary-light-3}" />
+    <SolidColorBrush o:Freeze="True" x:Key="PrimaryDisabledBrush" Color="{StaticResource el-color-primary-light-5}" />
+    <SolidColorBrush o:Freeze="True" x:Key="PrimaryActiveBrush" Color="{StaticResource el-color-primary-dark-2}" />
+
+    <Style x:Key="Primary" BasedOn="{StaticResource ButtonBaseStyle}" TargetType="Button">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource PrimaryHoverBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource PrimaryHoverBrush}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource PrimaryActiveBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource PrimaryActiveBrush}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource PrimaryDisabledBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource PrimaryDisabledBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Success-->
+    <SolidColorBrush o:Freeze="True" x:Key="SuccessBrush" Color="{StaticResource el-color-success}" />
+    <SolidColorBrush o:Freeze="True" x:Key="SuccessHoverBrush" Color="{StaticResource el-color-success-light-3}" />
+    <SolidColorBrush o:Freeze="True" x:Key="SuccessDisabledBrush" Color="{StaticResource el-color-success-light-5}" />
+    <SolidColorBrush o:Freeze="True" x:Key="SuccessActiveBrush" Color="{StaticResource el-color-success-dark-2}" />
+    <Style x:Key="Success" BasedOn="{StaticResource ButtonBaseStyle}" TargetType="Button">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="{StaticResource SuccessBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource SuccessBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource SuccessHoverBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource SuccessHoverBrush}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource SuccessActiveBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource SuccessActiveBrush}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource SuccessDisabledBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource SuccessDisabledBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Warning-->
+    <SolidColorBrush o:Freeze="True" x:Key="WarningBrush" Color="{StaticResource el-color-warning}" />
+    <SolidColorBrush o:Freeze="True" x:Key="WarningHoverBrush" Color="{StaticResource el-color-warning-light-3}" />
+    <SolidColorBrush o:Freeze="True" x:Key="WarningDisabledBrush" Color="{StaticResource el-color-warning-light-5}" />
+    <SolidColorBrush o:Freeze="True" x:Key="WarningActiveBrush" Color="{StaticResource el-color-warning-dark-2}" />
+    <Style x:Key="Warning" BasedOn="{StaticResource ButtonBaseStyle}" TargetType="Button">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="{StaticResource WarningBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource WarningBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource WarningHoverBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource WarningHoverBrush}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource WarningActiveBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource WarningActiveBrush}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource WarningDisabledBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource WarningDisabledBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Danger-->
+    <SolidColorBrush o:Freeze="True" x:Key="DangerBrush" Color="{StaticResource el-color-danger}" />
+    <SolidColorBrush o:Freeze="True" x:Key="DangerHoverBrush" Color="{StaticResource el-color-danger-light-3}" />
+    <SolidColorBrush o:Freeze="True" x:Key="DangerDisabledBrush" Color="{StaticResource el-color-danger-light-5}" />
+    <SolidColorBrush o:Freeze="True" x:Key="DangerActiveBrush" Color="{StaticResource el-color-danger-dark-2}" />
+    <Style x:Key="Danger" BasedOn="{StaticResource ButtonBaseStyle}" TargetType="Button">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="{StaticResource DangerBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource DangerBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource DangerHoverBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource DangerHoverBrush}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource DangerActiveBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource DangerActiveBrush}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource DangerDisabledBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource DangerDisabledBrush}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 
 </ResourceDictionary>
