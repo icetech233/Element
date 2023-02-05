@@ -4,6 +4,8 @@
         <ResourceDictionary Source="pack://application:,,,/Element.Core;component/Style/ColorStyle.xaml" />
 
         <ResourceDictionary Source="pack://application:,,,/Element.Core;component/Style/ButtonStyle.xaml" />
-
-    </ResourceDictionary.MergedDictionaries>
+		
+		<ResourceDictionary Source="pack://application:,,,/Element.Core;component/Style/BtnStyle.xaml.xaml" />
+		
+	</ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

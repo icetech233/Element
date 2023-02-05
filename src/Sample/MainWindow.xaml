@@ -11,7 +11,8 @@
 
         <ele:Btn
             HorizontalAlignment="Left" VerticalAlignment="Top"
-            Width="100" Height="60" CornerRadius="1" BorderThickness="4" Foreground="Red"
+            Width="100" Height="60" CornerRadius="1" BorderThickness="4"
+			Foreground="Red"
              Cursor="No">
             <TextBlock Text="TestButton"></TextBlock>
         </ele:Btn>

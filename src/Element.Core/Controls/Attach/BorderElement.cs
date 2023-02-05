@@ -28,10 +28,8 @@ namespace Element.Core.Controls
         #endregion
     }
 
-
     public class IconElement
     {
-
         #region Icon 
 
         public static readonly DependencyProperty GeometryProperty = 
@@ -42,9 +40,7 @@ namespace Element.Core.Controls
 
         public static Geometry GetGeometry(DependencyObject element)
             => (Geometry)element.GetValue(GeometryProperty);
-
         #endregion
-
 
         // Side Length
 
@@ -60,7 +56,6 @@ namespace Element.Core.Controls
             => (double)element.GetValue(LengthProperty);
 
         #endregion
-
-
     }
+
 }
