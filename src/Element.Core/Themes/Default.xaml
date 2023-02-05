@@ -3,8 +3,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Element.Core;component/Style/ColorStyle.xaml" />
 
+        <ResourceDictionary Source="pack://application:,,,/Element.Core;component/Style/ButtonStyle.xaml" />
 
-		<ResourceDictionary Source="pack://application:,,,/Element.Core;component/Style/BtnStyle.xaml" />
-		
-	</ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

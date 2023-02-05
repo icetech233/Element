@@ -8,10 +8,60 @@
         xmlns:ele="clr-namespace:Element.Core.Controls;assembly=Element.Core"
         Title="UI 测试" Height="450" Width="800">
     <Grid >
-        <ele:Btn Width="100" Height="40" 
-				 BorderThickness="4" Foreground="Red">
+
+        <ele:Btn
+            HorizontalAlignment="Left" VerticalAlignment="Top"
+            Width="100" Height="60" CornerRadius="1" BorderThickness="4" Foreground="Red"
+             Cursor="No">
             <TextBlock Text="TestButton"></TextBlock>
         </ele:Btn>
+
+
+        <StackPanel VerticalAlignment="Center" >
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Orientation="Horizontal">
+
+                <Button Style="{StaticResource Primary}" Margin="6 0 0 0" >
+                    <TextBlock Text="Primary" TextWrapping="NoWrap"></TextBlock>
+                </Button>
+
+                <Button Style="{DynamicResource Primary}"  Margin="6 0 0 0" IsEnabled="False"
+                    Cursor="No">
+                    <TextBlock Text="Disabled"></TextBlock>
+                </Button>
+
+                <Button Style="{StaticResource Success}"  Margin="10 0 0 0" >
+                    <TextBlock Text="Success" TextWrapping="NoWrap"></TextBlock>
+                </Button>
+
+                <Button Style="{DynamicResource Success}"  Margin="4 0 0 0" IsEnabled="False" >
+                    <TextBlock Text="Disabled"></TextBlock>
+                </Button>
+            </StackPanel>
+            
+            <StackPanel Margin="0 12 0 0" VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Orientation="Horizontal">
+
+                <Button Style="{StaticResource Warning}"  Margin="10 0 0 0" >
+                    <TextBlock Text="Warning" TextWrapping="NoWrap"></TextBlock>
+                </Button>
+
+                <Button Style="{DynamicResource Warning}"  Margin="4 0 0 0" IsEnabled="False" >
+                    <TextBlock Text="Disabled"></TextBlock>
+                </Button>
+
+                <Button Style="{StaticResource Danger}"  Margin="10 0 0 0" >
+                    <TextBlock Text="Danger" TextWrapping="NoWrap"></TextBlock>
+                </Button>
+
+                <Button Style="{DynamicResource Danger}"  Margin="4 0 0 0" IsEnabled="False" >
+                    <TextBlock Text="Disabled"></TextBlock>
+                </Button>
+
+            </StackPanel>
+
+        </StackPanel>
+        
     </Grid>
 </Window>
 
