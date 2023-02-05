@@ -2,10 +2,9 @@
 
   <PropertyGroup>
     <TargetFrameworks>net7.0-windows</TargetFrameworks>
-    
     <UseWPF>true</UseWPF>
     
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 
     <!--<Nullable>enable</Nullable>-->
   </PropertyGroup>

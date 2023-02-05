@@ -5,9 +5,7 @@
         <PackageIcon>element-plus-logo.png</PackageIcon>
         <LangVersion>10.0</LangVersion>
         
-
-
-
+	  
     </PropertyGroup>
     
     <ItemGroup>
