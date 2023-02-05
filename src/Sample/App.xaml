@@ -9,9 +9,8 @@
         <ResourceDictionary>
 
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Element.Core;component/Themes/Default.xaml" />
- 
-            </ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="pack://application:,,,/Element.Core;component/Themes/Default.xaml" />
+			</ResourceDictionary.MergedDictionaries>
             
         </ResourceDictionary>
     </Application.Resources>

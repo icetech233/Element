@@ -2,5 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Element.Core;component/Style/ColorStyle.xaml" />
-    </ResourceDictionary.MergedDictionaries>
+
+
+		<ResourceDictionary Source="pack://application:,,,/Element.Core;component/Style/BtnStyle.xaml" />
+		
+	</ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

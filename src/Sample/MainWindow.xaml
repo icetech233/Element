@@ -8,7 +8,8 @@
         xmlns:ele="clr-namespace:Element.Core.Controls;assembly=Element.Core"
         Title="UI 测试" Height="450" Width="800">
     <Grid >
-        <ele:Btn Width="100" Height="40" CornerRadius="1" BorderThickness="4" Foreground="Red">
+        <ele:Btn Width="100" Height="40" 
+				 BorderThickness="4" Foreground="Red">
             <TextBlock Text="TestButton"></TextBlock>
         </ele:Btn>
     </Grid>
