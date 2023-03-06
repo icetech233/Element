@@ -7,12 +7,11 @@
     xmlns:el="clr-namespace:Element.Core.Controls"
     >
 
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Element.Core;component/Style/ColorStyle.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
-    
-    <!--其他-->
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="pack://application:,,,/Element.Core;component/Style/ColorStyle.xaml" />
+	</ResourceDictionary.MergedDictionaries>
+	
+	<!--其他-->
     <Style x:Key="RectangleFocusVisual" TargetType="Rectangle">
         <Setter Property="Margin" Value="-2" />
         <Setter Property="Opacity" Value=".6" />
@@ -30,36 +29,32 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Color x:Key="PrimaryTextColor">#212121</Color>
-    <SolidColorBrush o:Freeze="True" x:Key="PrimaryTextBrush" Color="{DynamicResource PrimaryTextColor}" />
-    <system:Double x:Key="SubHeadFontSize">16</system:Double>
-    <system:Double x:Key="TextFontSize">12</system:Double>
-    
-    <!--Button-->
+
+	<!--
+	<Color x:Key="PrimaryTextColor">#212121</Color>
+	<system:Double x:Key="TextFontSize">12</system:Double>-->
+
+	<!--Button-->
 
     <Style x:Key="BaseStyle" TargetType="Control">
-        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}" />
-        <Setter Property="FontSize" Value="{StaticResource TextFontSize}" />
+        <!--<Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}" />
+        <Setter Property="FontSize" Value="{StaticResource TextFontSize}" />-->
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
     </Style>
-    
-    <Style x:Key="ButtonBaseBaseStyle" BasedOn="{StaticResource BaseStyle}" TargetType="ButtonBase">
-        
-        <Setter Property="BorderBrush" Value="White" />
-        <Setter Property="BorderThickness" Value="0" />
-        
-        <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="HorizontalContentAlignment" Value="Center" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
 
-    </Style>
+	<Style x:Key="ButtonBaseBaseStyle" BasedOn="{StaticResource BaseStyle}" TargetType="ButtonBase">
 
-    
-    
-    
-    
-    <!--样式模板-->
+		<Setter Property="BorderBrush" Value="White" />
+		<Setter Property="BorderThickness" Value="0" />
+
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+
+	</Style>
+	
+	<!--样式模板-->
     <system:Double x:Key="el-font-size-base">16</system:Double>
 
     <system:Double x:Key="el-border-radius-base">4</system:Double>

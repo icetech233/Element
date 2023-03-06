@@ -9,4 +9,12 @@
     <!--<Nullable>enable</Nullable>-->
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Fonts\SmileySans-Oblique.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\SmileySans-Oblique.ttf" />
+  </ItemGroup>
+
 </Project>

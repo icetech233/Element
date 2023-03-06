@@ -6,64 +6,257 @@
         xmlns:local="clr-namespace:Sample"
         mc:Ignorable="d"
         xmlns:ele="clr-namespace:Element.Core.Controls;assembly=Element.Core"
-        Title="UI 测试" Height="450" Width="800">
-    <Grid >
+        Title="UI 测试" Width="1400" Height="840"
+		>
+	
+	<Window.Resources>
+	
+		<Pen x:Key="GrayPen" Thickness="4" LineJoin="Round" Brush="#333333" />
 
-        <ele:Btn
+		<DrawingImage x:Key="bgDrawingImage">
+			<DrawingImage.Drawing>
+				<DrawingGroup ClipGeometry="M0,0 V800 H1400 V0 H0 Z">
+					<GeometryDrawing Brush="#FF81C995">
+						<GeometryDrawing.Pen>
+							<Pen Brush="#FF81C995" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+						</GeometryDrawing.Pen>
+						<GeometryDrawing.Geometry>
+							<RectangleGeometry RadiusX="40" RadiusY="40" Rect="1300,400,300,300" />
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+
+
+					<GeometryDrawing Brush="#FFFDD663" Geometry="F1 M1400,800z M0,0z M100,350A150,150,0,1,1,400,350Q400,370,380,370L250,370 120,370Q100,370,100,350">
+						<GeometryDrawing.Pen>
+							<Pen Brush="#FFFDD663" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+						</GeometryDrawing.Pen>
+					</GeometryDrawing>
+					<GeometryDrawing Brush="#FF1A73E8">
+						<GeometryDrawing.Pen>
+							<Pen Brush="#FF1A73E8" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+						</GeometryDrawing.Pen>
+						<GeometryDrawing.Geometry>
+							<EllipseGeometry RadiusX="20" RadiusY="20" Center="200,150" />
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+					<GeometryDrawing Brush="#FFEE675C" Geometry="F1 M1400,800z M0,0z M165,580L270,580Q275,578,270,570L223,483Q220,480,217,483L165,570Q160,578,165,580">
+						<GeometryDrawing.Pen>
+							<Pen Brush="#FFEE675C" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+						</GeometryDrawing.Pen>
+					</GeometryDrawing>
+					<GeometryDrawing Brush="#FFF1F3F4">
+						<GeometryDrawing.Pen>
+							<Pen Brush="#FFF1F3F4" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+						</GeometryDrawing.Pen>
+						<GeometryDrawing.Geometry>
+							<EllipseGeometry RadiusX="30" RadiusY="30" Center="1200,600" />
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+					<GeometryDrawing Brush="#FFF1F3F4" Geometry="F1 M1400,800z M0,0z M100,350A40,40,0,1,1,180,350L180,430A40,40,0,1,1,100,430z">
+						<GeometryDrawing.Pen>
+							<Pen Brush="#FFF1F3F4" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+						</GeometryDrawing.Pen>
+					</GeometryDrawing>
+					<GeometryDrawing Brush="#FF81C995">
+						<GeometryDrawing.Pen>
+							<Pen Brush="#FF81C995" Thickness="1" StartLineCap="Flat" EndLineCap="Flat" LineJoin="Miter" />
+						</GeometryDrawing.Pen>
+						<GeometryDrawing.Geometry>
+							<RectangleGeometry RadiusX="40" RadiusY="40" Rect="400,600,100,100" />
+						</GeometryDrawing.Geometry>
+					</GeometryDrawing>
+				</DrawingGroup>
+			</DrawingImage.Drawing>
+		</DrawingImage>
+
+		<PathGeometry x:Key="path1" Figures="M800 -200 L 800 -300 L 800 -200" />
+		<PathGeometry x:Key="path2" Figures="M0 0L 40 20Z" />
+
+		<Storyboard x:Key="Storyboard1" RepeatBehavior="Forever">
+			<DoubleAnimation Storyboard.TargetName="GeoGreen" 
+				Storyboard.TargetProperty="(Geometry.Transform).(TransformGroup.Children)[2].(RotateTransform.Angle)"
+				To="360" Duration="00:00:35">
+			</DoubleAnimation>
+			<DoubleAnimation Storyboard.TargetName="GeoRed"
+				Storyboard.TargetProperty="(Geometry.Transform).(TransformGroup.Children)[0].(RotateTransform.Angle)"
+				To="360" Duration="00:00:35">
+			</DoubleAnimation>
+
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="GeoYellow" RepeatBehavior="Forever"
+				Storyboard.TargetProperty="(Geometry.Transform).(TransformGroup.Children)[0].(RotateTransform.Angle)">
+				<LinearDoubleKeyFrame KeyTime="00:00:15" Value="-30" />
+				<LinearDoubleKeyFrame KeyTime="00:00:30" Value="0" />
+			</DoubleAnimationUsingKeyFrames>
+
+			<DoubleAnimationUsingPath Storyboard.TargetName="GeoYellow" 
+									  Storyboard.TargetProperty="(Geometry.Transform).(TransformGroup.Children)[1].(TranslateTransform.X)"
+									  Source="X" Duration="00:00:20"
+									  PathGeometry="{StaticResource path1}">
+			</DoubleAnimationUsingPath>
+			<DoubleAnimationUsingPath Storyboard.TargetName="GeoYellow" 
+									  Storyboard.TargetProperty="(Geometry.Transform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+									  Source="Y" Duration="00:00:20"
+									  PathGeometry="{StaticResource path1}">
+			</DoubleAnimationUsingPath>
+
+			<DoubleAnimationUsingPath Storyboard.TargetName="GeoBlue" 
+									  Storyboard.TargetProperty="(Geometry.Transform).(TransformGroup.Children)[0].(TranslateTransform.X)"
+									  Source="X" Duration="00:00:05"
+									  PathGeometry="{StaticResource path2}">
+			</DoubleAnimationUsingPath>
+			<DoubleAnimationUsingPath Storyboard.TargetName="GeoBlue" 
+									  Storyboard.TargetProperty="(Geometry.Transform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+									  Source="Y" Duration="00:00:05"
+									  PathGeometry="{StaticResource path2}">
+			</DoubleAnimationUsingPath>
+
+		</Storyboard>
+		
+	</Window.Resources>
+
+	<Grid>
+		
+		<!--背景-->
+		<Grid Width="1400" Height="800" >
+			
+			<Image Width="700" Height="400" VerticalAlignment="Center"
+				   >
+				<Image.Source>
+					<DrawingImage>
+						<DrawingImage.Drawing>
+							<DrawingGroup>
+
+								<GeometryDrawing Brush="#81C995">
+									<GeometryDrawing.Geometry>
+										<RectangleGeometry x:Name="GeoGreen"
+														   RadiusX="40" RadiusY="40" Rect="1300,400,300,300" >
+											<RectangleGeometry.Transform>
+												<TransformGroup>
+													<ScaleTransform />
+													<SkewTransform />
+													<RotateTransform Angle="0" CenterX="1450" CenterY="550"/>
+												</TransformGroup>
+											</RectangleGeometry.Transform>
+										</RectangleGeometry>
+									</GeometryDrawing.Geometry>
+								</GeometryDrawing>
+
+								<GeometryDrawing Brush="#FDD663">
+									<GeometryDrawing.Geometry>
+										<PathGeometry x:Name="GeoYellow"
+													  
+													  Figures="M100 350 A150 150 0 1 1 400 350 Q400 370 380 370L250 370L120 370Q100 370 100 350">
+											<PathGeometry.Transform>
+												<TransformGroup>
+													<RotateTransform/>
+													<TranslateTransform X="0" Y="0" />
+												</TransformGroup>
+											</PathGeometry.Transform>
+										</PathGeometry>
+									</GeometryDrawing.Geometry>
+								</GeometryDrawing>
+
+								<GeometryDrawing Brush="#1A73E8">
+									<GeometryDrawing.Geometry>
+										<EllipseGeometry x:Name="GeoBlue" 
+														 RadiusX="20" RadiusY="20" Center="200,150" >
+											<EllipseGeometry.Transform>
+												<TransformGroup>
+													<TranslateTransform X="0" Y="0" />
+												</TransformGroup>
+											</EllipseGeometry.Transform>
+										</EllipseGeometry>
+									</GeometryDrawing.Geometry>
+								</GeometryDrawing>
+								
+								<GeometryDrawing Brush="#EE675C" >
+									<GeometryDrawing.Geometry>
+										<PathGeometry x:Name="GeoRed" Figures="M 165 580 L 270 580 Q275 578 270 570 L 223 483 Q220 480 217 483 L 165 570 Q160 578 165 580" >
+											<PathGeometry.Transform>
+												<TransformGroup>
+													<RotateTransform Angle="0" CenterX="210" CenterY="530"/>
+												</TransformGroup>
+											</PathGeometry.Transform>
+										</PathGeometry>
+									</GeometryDrawing.Geometry>
+								</GeometryDrawing>
+							</DrawingGroup>
+
+
+						</DrawingImage.Drawing>
+					</DrawingImage>
+				</Image.Source>
+
+				<Image.Triggers>
+					<EventTrigger RoutedEvent="Shape.Loaded">
+						<BeginStoryboard Storyboard="{StaticResource Storyboard1}" />
+					</EventTrigger>
+				</Image.Triggers>
+			</Image>
+
+		</Grid>
+		
+		
+		<Grid>
+
+			<ele:Btn Style="{DynamicResource BtnStyle}"
             HorizontalAlignment="Left" VerticalAlignment="Top"
             Width="100" Height="60" CornerRadius="1" BorderThickness="4"
 			Foreground="Red"
              Cursor="No">
-            <TextBlock Text="TestButton"></TextBlock>
-        </ele:Btn>
+				<TextBlock  Text="TestButton" FontFamily="DengXian"></TextBlock>
+			</ele:Btn>
 
-
-        <StackPanel VerticalAlignment="Center" >
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
+			<StackPanel VerticalAlignment="Center" >
+				<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
                    Orientation="Horizontal">
 
-                <Button Style="{StaticResource Primary}" Margin="6 0 0 0" >
-                    <TextBlock Text="Primary" TextWrapping="NoWrap"></TextBlock>
-                </Button>
+					<Button Style="{StaticResource Primary}" Margin="6 0 0 0" >
+						<TextBlock Text="{Binding Title}" TextWrapping="NoWrap"></TextBlock>
+					</Button>
 
-                <Button Style="{DynamicResource Primary}"  Margin="6 0 0 0" IsEnabled="False"
+					<Button Style="{DynamicResource Primary}"  Margin="6 0 0 0" IsEnabled="False"
                     Cursor="No">
-                    <TextBlock Text="Disabled"></TextBlock>
-                </Button>
+						<TextBlock  Text="Disabled"></TextBlock>
+					</Button>
 
-                <Button Style="{StaticResource Success}"  Margin="10 0 0 0" >
-                    <TextBlock Text="Success" TextWrapping="NoWrap"></TextBlock>
-                </Button>
+					<Button Style="{StaticResource Success}"  Margin="10 0 0 0" >
+						<TextBlock Text="Success" TextWrapping="NoWrap" ></TextBlock>
+					</Button>
 
-                <Button Style="{DynamicResource Success}"  Margin="4 0 0 0" IsEnabled="False" >
-                    <TextBlock Text="Disabled"></TextBlock>
-                </Button>
-            </StackPanel>
-            
-            <StackPanel Margin="0 12 0 0" VerticalAlignment="Center" HorizontalAlignment="Center"
+					<Button Style="{DynamicResource Success}"  Margin="4 0 0 0" IsEnabled="False" >
+						<TextBlock FontFamily="{StaticResource SmileySans}"
+								   Text="Disabled"></TextBlock>
+					</Button>
+				</StackPanel>
+
+				<StackPanel Margin="0 12 0 0" VerticalAlignment="Center" HorizontalAlignment="Center"
                    Orientation="Horizontal">
 
-                <Button Style="{StaticResource Warning}"  Margin="10 0 0 0" >
-                    <TextBlock Text="Warning" TextWrapping="NoWrap"></TextBlock>
-                </Button>
+					<Button Style="{StaticResource Warning}"  Margin="10 0 0 0" >
+						<TextBlock Text="Warning" TextWrapping="NoWrap"></TextBlock>
+					</Button>
 
-                <Button Style="{DynamicResource Warning}"  Margin="4 0 0 0" IsEnabled="False" >
-                    <TextBlock Text="Disabled"></TextBlock>
-                </Button>
+					<Button Style="{DynamicResource Warning}"  Margin="4 0 0 0" IsEnabled="False" >
+						<TextBlock Text="Disabled"></TextBlock>
+					</Button>
 
-                <Button Style="{StaticResource Danger}"  Margin="10 0 0 0" >
-                    <TextBlock Text="Danger" TextWrapping="NoWrap"></TextBlock>
-                </Button>
+					<Button Style="{StaticResource Danger}"  Margin="10 0 0 0" >
+						<TextBlock Text="Danger" TextWrapping="NoWrap"></TextBlock>
+					</Button>
 
-                <Button Style="{DynamicResource Danger}"  Margin="4 0 0 0" IsEnabled="False" >
-                    <TextBlock Text="Disabled"></TextBlock>
-                </Button>
+					<Button Style="{DynamicResource Danger}"  Margin="4 0 0 0" IsEnabled="False" >
+						<TextBlock Text="Disabled"></TextBlock>
+					</Button>
 
-            </StackPanel>
+				</StackPanel>
 
-        </StackPanel>
-        
-    </Grid>
+			</StackPanel>
+
+		</Grid>
+
+	</Grid>
+
 </Window>
 
     

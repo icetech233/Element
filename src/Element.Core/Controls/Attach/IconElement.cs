@@ -5,7 +5,7 @@ namespace Element.Core.Controls
 {
     public class IconElement
     {
-        #region Icon 
+        #region Icon Geometry
 
         public static readonly DependencyProperty GeometryProperty = 
             DependencyProperty.RegisterAttached("Geometry", typeof(Geometry), typeof(IconElement), new PropertyMetadata(default(Geometry)));

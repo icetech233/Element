@@ -9,33 +9,20 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sample
+namespace Sample.component
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// color.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class color : Page
     {
-        // Primary
-
-        //public string Title { get; set; }
-
-        //Storyboard Storyboard1;
-
-        public MainWindow()
+        public color()
         {
             InitializeComponent();
-            //Storyboard1 = (this.FindResource("Storyboard1") as Storyboard)!;
-
-            
-            this.DataContext = this;
         }
-
-     
     }
 }
