@@ -212,7 +212,9 @@
                    Orientation="Horizontal">
 
 					<Button Style="{StaticResource Primary}" Margin="6 0 0 0" >
-						<TextBlock Text="{Binding Title}" TextWrapping="NoWrap"></TextBlock>
+						<TextBlock FontFamily="{StaticResource SmileySans}"
+								   FontStyle="Oblique"
+							Text="UIの测试" TextWrapping="NoWrap"></TextBlock>
 					</Button>
 
 					<Button Style="{DynamicResource Primary}"  Margin="6 0 0 0" IsEnabled="False"

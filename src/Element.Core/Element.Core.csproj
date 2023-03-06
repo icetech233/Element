@@ -10,11 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Fonts\SmileySans-Oblique.ttf" />
+    <None Remove="Fonts\SmileySans-Oblique.otf" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Fonts\SmileySans-Oblique.ttf" />
+    <Resource Include="Fonts\SmileySans-Oblique.otf" />
   </ItemGroup>
 
 </Project>
