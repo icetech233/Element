@@ -77,12 +77,12 @@
 				Storyboard.TargetProperty="(Geometry.Transform).(TransformGroup.Children)[2].(RotateTransform.Angle)"
 				To="360" Duration="00:00:35">
 			</DoubleAnimation>
-			<DoubleAnimation Storyboard.TargetName="GeoRed"
+			<DoubleAnimation Storyboard.TargetName="GeoRed" 
 				Storyboard.TargetProperty="(Geometry.Transform).(TransformGroup.Children)[0].(RotateTransform.Angle)"
 				To="360" Duration="00:00:35">
 			</DoubleAnimation>
 
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="GeoYellow" RepeatBehavior="Forever"
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetName="GeoYellow" 
 				Storyboard.TargetProperty="(Geometry.Transform).(TransformGroup.Children)[0].(RotateTransform.Angle)">
 				<LinearDoubleKeyFrame KeyTime="00:00:15" Value="-30" />
 				<LinearDoubleKeyFrame KeyTime="00:00:30" Value="0" />
@@ -196,14 +196,13 @@
 
 		</Grid>
 		
-		
 		<Grid>
 
 			<ele:Btn Style="{DynamicResource BtnStyle}"
-            HorizontalAlignment="Left" VerticalAlignment="Top"
-            Width="100" Height="60" CornerRadius="1" BorderThickness="4"
-			Foreground="Red"
-             Cursor="No">
+				HorizontalAlignment="Left" VerticalAlignment="Top"
+				Width="100" Height="60" CornerRadius="1" BorderThickness="4"
+				Foreground="Red"  Icon="{StaticResource  Loading}"
+				Cursor="No">
 				<TextBlock  Text="TestButton" FontFamily="DengXian"></TextBlock>
 			</ele:Btn>
 
@@ -212,14 +211,13 @@
                    Orientation="Horizontal">
 
 					<Button Style="{StaticResource Primary}" Margin="6 0 0 0" >
-						<TextBlock FontFamily="{StaticResource SmileySans}"
-								   FontStyle="Oblique"
+						<TextBlock 
 							Text="UIの测试" TextWrapping="NoWrap"></TextBlock>
 					</Button>
 
 					<Button Style="{DynamicResource Primary}"  Margin="6 0 0 0" IsEnabled="False"
                     Cursor="No">
-						<TextBlock  Text="Disabled"></TextBlock>
+						<TextBlock Text="Disabled" />
 					</Button>
 
 					<Button Style="{StaticResource Success}"  Margin="10 0 0 0" >
